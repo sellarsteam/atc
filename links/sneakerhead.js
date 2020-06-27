@@ -7,10 +7,10 @@ var quantity = new URL(window.location.href).searchParams.get('q');  // Parse qu
 
 
 if (id && id == parseInt(id)) {  // Validate id
-    if (!quantity || quantity != parseInt(quantity) || quantity < 1) quantity = 1; // Validate quantity
+    if (!quantity || quantity != parseInt(quantity) || quantity < 1) quantity = 1;  // Validate quantity
 
-    fetch('https://beliefmoscow.com/cart_items.json', {   // Add product to cart
-        'body': `variant_id=${id}&quantity=${quantity}`,
+    fetch('https://sneakerhead.ru/local/templates/.default/ajax/ajax.php', {  // Add product to cart
+        'body': `action=ADD2BASKET&id=${id}&quantity=${quantity}`,
         'credentials': 'include',
         'headers': {
             'Accept': '*/*',
@@ -18,8 +18,8 @@ if (id && id == parseInt(id)) {  // Validate id
         },
         'method': 'POST',
         'mode': 'no-cors'
-    }).then(function () {
-        window.location.href = 'https://store.beliefmoscow.com/new_order';  // Go to checkout
+    }).then(function() {
+        window.location.href = 'https://sneakerhead.ru/checkout/';  // Go to checkout
     });
 } else {
     window.location.href = '/';  // Go to homepage if id validation failed
