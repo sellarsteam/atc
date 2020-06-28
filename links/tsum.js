@@ -3,11 +3,11 @@
 
 
 var id = new URL(window.location.href).searchParams.get('id');  // Parse id
-var quantity = new URL(window.location.href).searchParams.get('q');
+var quantity = new URL(window.location.href).searchParams.get('q');  // Parse quantity
 
 
 if (id && id == parseInt(id)) {  // Validate id
-    if (!quantity || quantity != parseInt(quantity) || quantity < 1) quantity = 1; // Validate quantity
+    if (!quantity || quantity != parseInt(quantity) || quantity < 1) quantity = 1;  // Validate quantity
 
     fetch('https://api.tsum.ru/cart/item', {  // Add product to cart
         'body': `id=${id}&type=sku&quantity=${quantity}`,

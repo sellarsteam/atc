@@ -18,7 +18,7 @@ if (id && id == parseInt(id)) {  // Validate id
         },
         'method': 'POST',
         'mode': 'no-cors'
-    }).then(function() {
+    }).then(function () {
         window.location.href = 'https://sneakerhead.ru/checkout/';  // Go to checkout
     });
 } else {
