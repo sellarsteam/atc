@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Script</title>
+    </head>
+    <body>
+        <script>
+            function startScript() {
+                setTimeout(() => {
+                    const now = new Date();
+                    if (now.getHours() !== 14) startScript();
+                    else {
+                        if (now.getMinutes() !== 00) startScript();
+                        else {
+                            if (now.getSeconds() !== 00) startScript();
+                            else document.querySelector("#checkout > div.buttonContainer > button").click();
+                        }
+                    }
+                }, 100)
+            }
+        </script>
+    </body>
+</html>

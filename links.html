@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sellars ATC Links</title>
+    <noscript>You must enable JavaScript in your browser to use ATC links.</noscript>
+    <script>
+        var site = new URL(window.location.href).searchParams.get('site');
+
+        if (site && typeof site === 'string') {
+            script = document.createElement('script');
+
+            switch (site) {
+                case "belief":
+                    script.src = "./atc/belief.min.js";
+                    break;
+                case "sneakerhead":
+                    script.src = "./atc/sneakerhead.min.js";
+                    break;
+                case "streetbeat":
+                    script.src = "./atc/streetbeat.min.js";
+                    break;
+                case "supreme":
+                    script.src = "./atc/supreme.min.js";
+                    break;
+                case "tsum":
+                    script.src = "./atc/tsum.min.js";
+                    break;
+                default:
+                    alert('Unknown site');
+                    window.location.href = '/';
+                    break;
+            }
+
+            document.head.appendChild(script);
+        } else {
+            alert('Wrong site');
+            window.location.href = '/';
+        }
+    </script>
+</body>
+</head>
+<body>
+</html>
