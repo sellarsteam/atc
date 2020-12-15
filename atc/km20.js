@@ -14,7 +14,7 @@ if (id && id == parseInt(id)) {  // Validate id
         },
         "method": "POST",
         "mode": "no-cors"
-    }).then(() => window.location.href = 'https://www.km20.ru/cart/');  // Go to checkout
+    }).then(() => window.location.href = 'https://www.km20.ru/cart/order/');  // Go to checkout
     
 } else {
     window.location.href = '/';  // Go to homepage if id validation failed
